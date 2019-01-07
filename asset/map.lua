@@ -1,0 +1,151 @@
+return {
+  version = "1.2",
+  luaversion = "5.1",
+  tiledversion = "1.2.1",
+  orientation = "orthogonal",
+  renderorder = "right-down",
+  width = 60,
+  height = 60,
+  tilewidth = 16,
+  tileheight = 16,
+  nextlayerid = 4,
+  nextobjectid = 11,
+  properties = {},
+  tilesets = {},
+  layers = {
+    {
+      type = "tilelayer",
+      id = 1,
+      name = "tile1",
+      x = 0,
+      y = 0,
+      width = 60,
+      height = 60,
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA8GY4QAAB"
+    },
+    {
+      type = "objectgroup",
+      id = 2,
+      name = "collision",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 679,
+          width = 622,
+          height = 111,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 2,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 686,
+          y = 433,
+          width = 231,
+          height = 357,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 4,
+          y = 846,
+          width = 626,
+          height = 54,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 116,
+          y = 550,
+          width = 176,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 470,
+          y = 606,
+          width = 170,
+          height = 11,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2,
+          y = 370,
+          width = 89,
+          height = 47,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      id = 3,
+      name = "object",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 10,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 424,
+          y = 580,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    }
+  }
+}
