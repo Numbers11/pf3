@@ -28,7 +28,7 @@ function Movement:update(dt)
     self.falling = false
     if (self.velY * self.gravityScale > 0) and (not self.grounded)then
         self.falling = true
-    end 
+    end
 end
 
 function Movement:airMove()
@@ -77,7 +77,7 @@ function Movement:jump()
     self.falling = false
     self.friction = 1
 
-    -- this seems to be unnecessary
+    -- this seems to be unnecessary after all
     --[[ if self.riding then
         if self.riding.velY then
             print("SSSSSSSSSSSSSSSSSS")

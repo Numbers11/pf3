@@ -4,7 +4,8 @@ local Physics = {
     friction = 0.85,
     gravityScale = 1,
     maxY = 500,
-    maxX = 500
+    maxX = 500,
+    noPhysics = false
 }
 
 function Physics:init()
@@ -23,6 +24,8 @@ function Physics:addVelocity(x, y)
 end
 
 function Physics:update(dt)
+    if self.noPhysics then return end
+    
     local vX = self.velX
     local vY = self.velY
     local x = self.x

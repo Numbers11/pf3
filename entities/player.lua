@@ -1,5 +1,5 @@
 Player = Class("Player", Entity)
-Player:addComponent(Components.Input, Components.Physics, Components.Collider, Components.Movement, Components.Animation, Components.StateMachine)
+Player:addComponent(Components.Input, Components.Physics, Components.Collider, Components.Movement, Components.Animation, Components.StateMachine, Components.EdgeGrab)
 
 function Player:init(x, y, properties)
     self.collisionClass = "player"
@@ -19,6 +19,8 @@ function Player:init(x, y, properties)
     self:addState("walk", States.Walk(self))
     self:addState("jump", States.Jump(self))
     self:addState("falling", States.Falling(self))
+    self:addState("edgeGrab", States.EdgeGrab(self))
+    self:addState("edgeClimb", States.EdgeClimb(self))
     self:setState("idle")
 end
 
@@ -45,6 +47,12 @@ function Player:collisionResponse(col)
         elseif normal.y == 0 then
             --we hit something to the side
             self.velX = 0
+
+            --check if we can grab this edge & if yes set us to the edge grab state
+            if self:detectEdge(other) then
+                self:positionOnEdge(other.y, normal.x)
+                self:setState("edgeGrab")
+            end
         end
     else
         print("other collision")

@@ -26,7 +26,7 @@ local function collisionResponseShoving(world, col, x, y, w, h, goalX, goalY, fi
     local bumpCoordY = newY - otherH
 
     --check if the place we want to move to is already occupied
-    local p, len = world:queryRect(bumpCoordX, bumpCoordY, otherW, otherH)
+    local p, len = world:queryRect(bumpCoordX, bumpCoordY, otherW, otherH) --FIXME: this also squishes player when he moves against a platform as it pushes him off from the solid he stands on
     for i = 1, len do
         local blocking = p[i]
         if blocking ~= item and blocking ~= other then
