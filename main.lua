@@ -49,6 +49,8 @@ function spawn()
     aplayer = EM:create("Player", spawnPoint.x, spawnPoint.y, {w = 12, h = 28, name = "Adolf"})
     EM:create("Platform", spawnPoint.x - 100, spawnPoint.y, {w = 40, h = 20, targetX = spawnPoint.x + 200, targetY = spawnPoint.y})
     EM:create("Platform", spawnPoint.x + 220, spawnPoint.y + 20, {w = 40, h = 20, targetX = spawnPoint.x + 220, targetY = spawnPoint.y - 200})
+
+    GlobalTimer.after(1, function() EM:create("Grenade", spawnPoint.x, spawnPoint.y) end)
 end
 
 function love.load(arg)

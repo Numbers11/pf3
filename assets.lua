@@ -10,6 +10,11 @@ function loadAssets()
         image = lg.newImage("asset/Smoke_Fire.png"),
         g = anim8.newGrid(16, 16, 64, 64)
     }
+
+    assets.animations["explosion"] = {
+        image = lg.newImage("asset/Explosion.png"),
+        g = anim8.newGrid(96, 96, 1152, 96)
+    }
     return assets
 end
 

@@ -9,8 +9,8 @@ local Physics = {
 }
 
 function Physics:init()
-    self.velX = 0
-    self.velY = 0
+    self.velX = self.velX or 0
+    self.velY = self.velY or 0
 end
 
 function Physics:setVelocity(x, y)

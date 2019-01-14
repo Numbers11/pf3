@@ -1,8 +1,6 @@
 Entity = Class("Entity")
 
 function Entity:addComponent(...)
-    --if not self._components then self._components = {} end
-    --if not self._componentsNames then self._componentsNames = {} end
     local comps = self._components or {}
     self._components = {}
     self._componentsNames = {}
@@ -55,7 +53,6 @@ function Entity:init(x, y, properties)
             c.init(self)
         end
     end
-
 end
 
 function Entity:destroy()

@@ -28,6 +28,9 @@ function Player:collisionFilter(other)
     --if other.collisionClass == "platform" then --right now we have no extra collision class for platforms
     --    return nil
     --end
+    if other.collisionClass == "unit" then
+        return "cross"
+    end
     return "slide"
 end
 
@@ -35,7 +38,6 @@ function Player:collisionResponse(col)
     local normal = col.normal
     local other = col.other
     if other.collisionClass == "solid" then
-        --            self:changeVelocityByCollisionNormal(normal.x, normal.y, 1)
         if normal.y == -1 then
             --we are landing on an object from above
             self.velY = 0
@@ -46,7 +48,7 @@ function Player:collisionResponse(col)
             print("Ouch my head")
         elseif normal.y == 0 then
             --we hit something to the side
-            self.velX = 0
+            --self.velX = 0
 
             --check if we can grab this edge & if yes set us to the edge grab state
             if self:detectEdge(other) then
@@ -74,19 +76,4 @@ function Player:draw()
             lg.line(self.x, self.y, self.riding.x, self.riding.y)
         end
     end
-end
-
-function Player:changeVelocityByCollisionNormal(nx, ny, bounciness)
-    bounciness = bounciness or 0
-    local vx, vy = self.velX, self.velY
-  
-    if (nx < 0 and vx > 0) or (nx > 0 and vx < 0) then
-      vx = -vx * bounciness
-    end
-  
-    if (ny < 0 and vy > 0) or (ny > 0 and vy < 0) then
-      vy = -vy * bounciness
-    end
-  
-    self.velX, self.velY = vx, vy
 end
